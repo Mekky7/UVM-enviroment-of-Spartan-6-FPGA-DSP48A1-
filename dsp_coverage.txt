@@ -1,0 +1,1403 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /\top#dut /SEC1
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /SEC1
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                    101001     Count coming in to IF
+    12              1                       1008                     if (RST)
+    14              1                      98987                     else if (EN)
+                                            1006     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    200991     Count coming in to IF
+    20              1                       1994         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                     198997         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /SEC1 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                     101001                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                       1008                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      98987                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     200992         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        116       115         1    99.13%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /SEC1 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                          IN[0-17]           1           1      100.00 
+                                         OUT[0-17]           1           1      100.00 
+                                        Q_IN[0-17]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           1           0       50.00 
+
+Total Node Count     =         58 
+Toggled Node Count   =         57 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      99.13% (115 of 116 bins)
+
+=================================================================================
+=== Instance: /\top#dut /SEC2
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /SEC2
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                    101001     Count coming in to IF
+    12              1                       1006                     if (RST)
+    14              1                      98990                     else if (EN)
+                                            1005     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    200989     Count coming in to IF
+    20              1                       1991         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                     198998         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /SEC2 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                     101001                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                       1006                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      98990                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     200990         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        116       115         1    99.13%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /SEC2 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                          IN[0-17]           1           1      100.00 
+                                         OUT[0-17]           1           1      100.00 
+                                        Q_IN[0-17]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           1           0       50.00 
+
+Total Node Count     =         58 
+Toggled Node Count   =         57 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      99.13% (115 of 116 bins)
+
+=================================================================================
+=== Instance: /\top#dut /SEC3
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /SEC3
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                    101001     Count coming in to IF
+    12              1                       1058                     if (RST)
+    14              1                      98959                     else if (EN)
+                                             984     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    201007     Count coming in to IF
+    20              1                       1992         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                     199015         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /SEC3 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                     101001                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                       1058                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      98959                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     201008         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        296       295         1    99.66%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /SEC3 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                          IN[0-47]           1           1      100.00 
+                                         OUT[0-47]           1           1      100.00 
+                                        Q_IN[0-47]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           1           0       50.00 
+
+Total Node Count     =        148 
+Toggled Node Count   =        147 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      99.66% (295 of 296 bins)
+
+=================================================================================
+=== Instance: /\top#dut /SEC4
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /SEC4
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                    101001     Count coming in to IF
+    12              1                       1038                     if (RST)
+    14              1                      98987                     else if (EN)
+                                             976     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    201015     Count coming in to IF
+    20              1                       1994         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                     199021         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /SEC4 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                     101001                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                       1038                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      98987                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     201016         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        116       115         1    99.13%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /SEC4 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                          IN[0-17]           1           1      100.00 
+                                         OUT[0-17]           1           1      100.00 
+                                        Q_IN[0-17]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           1           0       50.00 
+
+Total Node Count     =         58 
+Toggled Node Count   =         57 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      99.13% (115 of 116 bins)
+
+=================================================================================
+=== Instance: /\top#dut /OPMODE_SEC
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /OPMODE_SEC
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                    101000     Count coming in to IF
+    12              1                       1017                     if (RST)
+    14              1                      98968                     else if (EN)
+                                            1015     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    200204     Count coming in to IF
+    20              1                       1969         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                     198235         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /OPMODE_SEC --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                     101000                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                       1017                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      98968                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     200205         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         56        55         1    98.21%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /OPMODE_SEC --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                           IN[0-7]           1           1      100.00 
+                                          OUT[0-7]           1           1      100.00 
+                                         Q_IN[0-7]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           1           0       50.00 
+
+Total Node Count     =         28 
+Toggled Node Count   =         27 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      98.21% (55 of 56 bins)
+
+=================================================================================
+=== Instance: /\top#dut /SEC5
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /SEC5
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                    100997     Count coming in to IF
+    12              1                       1006                     if (RST)
+    14              1                      98990                     else if (EN)
+                                            1001     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    200159     Count coming in to IF
+    20              1                       1991         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                     198168         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /SEC5 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                     100997                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                       1006                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      98990                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     200160         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        116       115         1    99.13%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /SEC5 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                          IN[0-17]           1           1      100.00 
+                                         OUT[0-17]           1           1      100.00 
+                                        Q_IN[0-17]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           1           0       50.00 
+
+Total Node Count     =         58 
+Toggled Node Count   =         57 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      99.13% (115 of 116 bins)
+
+=================================================================================
+=== Instance: /\top#dut /SEC6
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /SEC6
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                    100989     Count coming in to IF
+    12              1                       1008                     if (RST)
+    14              1                      98987                     else if (EN)
+                                             994     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    100990     Count coming in to IF
+    20              1                       1994         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                      98996         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /SEC6 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                     100989                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                       1008                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      98987                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     100991         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        116       115         1    99.13%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /SEC6 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                          IN[0-17]           1           1      100.00 
+                                         OUT[0-17]           1           1      100.00 
+                                        Q_IN[0-17]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           1           0       50.00 
+
+Total Node Count     =         58 
+Toggled Node Count   =         57 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      99.13% (115 of 116 bins)
+
+=================================================================================
+=== Instance: /\top#dut /SEC7
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /SEC7
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                    100876     Count coming in to IF
+    12              1                       1034                     if (RST)
+    14              1                      98891                     else if (EN)
+                                             951     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    198757     Count coming in to IF
+    20              1                       2989         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                     195768         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /SEC7 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                     100876                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                       1034                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      98891                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     198758         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        224       223         1    99.55%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /SEC7 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                          IN[0-35]           1           1      100.00 
+                                         OUT[0-35]           1           1      100.00 
+                                        Q_IN[0-35]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           1           0       50.00 
+
+Total Node Count     =        112 
+Toggled Node Count   =        111 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      99.55% (223 of 224 bins)
+
+=================================================================================
+=== Instance: /\top#dut /SEC8
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /SEC8
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                     76828     Count coming in to IF
+    12              1                        998                     if (RST)
+    14              1                      74826                     else if (EN)
+                                            1004     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    100820     Count coming in to IF
+    20              1                        947         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                      99873         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /\top#dut /SEC8 --
+
+  File RTL_dsp.sv
+-----------Focused Expression View (Bimodal)------------
+Line       20 Item    1  (~SEL? IN: Q_IN)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+         SEL         Y
+          IN         Y
+        Q_IN         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           0           1  SEL_0                 -                                  
+ Row   2:           1           1  SEL_1                 -                                  
+ Row   3:           1           0  IN_0                  ~SEL                               
+ Row   4:           0           1  IN_1                  ~SEL                               
+ Row   5:           1           0  Q_IN_0                SEL                                
+ Row   6:           0           1  Q_IN_1                SEL                                
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /SEC8 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                      76828                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                        998                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      74826                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     100821         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         14        13         1    92.85%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /SEC8 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                             IN[0]           1           1      100.00 
+                                            OUT[0]           1           1      100.00 
+                                           Q_IN[0]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           1           0       50.00 
+
+Total Node Count     =          7 
+Toggled Node Count   =          6 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      92.85% (13 of 14 bins)
+
+=================================================================================
+=== Instance: /\top#dut /SEC9
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /SEC9
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                     69795     Count coming in to IF
+    12              1                        997                     if (RST)
+    14              1                      67797                     else if (EN)
+                                            1001     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    100204     Count coming in to IF
+    20              1                        915         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                      99289         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /\top#dut /SEC9 --
+
+  File RTL_dsp.sv
+-----------Focused Expression View (Bimodal)------------
+Line       20 Item    1  (~SEL? IN: Q_IN)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+         SEL         Y
+          IN         Y
+        Q_IN         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           0           1  SEL_0                 -                                  
+ Row   2:           1           1  SEL_1                 -                                  
+ Row   3:           1           0  IN_0                  ~SEL                               
+ Row   4:           0           1  IN_1                  ~SEL                               
+ Row   5:           1           0  Q_IN_0                SEL                                
+ Row   6:           0           1  Q_IN_1                SEL                                
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /SEC9 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                      69795                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                        997                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      67797                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     100205         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         14        13         1    92.85%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /SEC9 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                             IN[0]           1           1      100.00 
+                                            OUT[0]           1           1      100.00 
+                                           Q_IN[0]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           1           0       50.00 
+
+Total Node Count     =          7 
+Toggled Node Count   =          6 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      92.85% (13 of 14 bins)
+
+=================================================================================
+=== Instance: /\top#dut /SEC10
+=== Design Unit: work.section
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         4         1    80.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut /SEC10
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    12                                    100629     Count coming in to IF
+    12              1                       1028                     if (RST)
+    14              1                      98574                     else if (EN)
+                                            1027     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                    251718     Count coming in to IF
+    20              1                    ***0***         assign OUT = (SEL == 0) ? IN : Q_IN;
+    20              2                     251718         assign OUT = (SEL == 0) ? IN : Q_IN;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut /SEC10 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    1                                                module section(IN, SEL, OUT, CLK, RST, EN);
+    2                                                    parameter W = 18;
+    3                                                    input [W-1:0] IN;
+    4                                                    input SEL, CLK, RST, EN;
+    5                                                    reg [W-1:0] Q_IN;
+    6                                                    output [W-1:0] OUT;
+    7                                                    parameter RST_TYPE = "SYNC";
+    8                                                
+    9                                                    generate
+    10                                                       if (RST_TYPE == "SYNC") begin
+    11              1                     100629                 always @(posedge CLK) begin
+    12                                                               if (RST)
+    13              1                       1028                         Q_IN <= 0;
+    14                                                               else if (EN)
+    15              1                      98574                         Q_IN <= IN;
+    16                                                           end
+    17                                                       end 
+    18                                                   endgenerate
+    19                                               
+    20              1                     251719         assign OUT = (SEL == 0) ? IN : Q_IN;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        296       294         2    99.32%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut /SEC10 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               CLK           1           1      100.00 
+                                                EN           1           1      100.00 
+                                          IN[0-47]           1           1      100.00 
+                                         OUT[0-47]           1           1      100.00 
+                                        Q_IN[0-47]           1           1      100.00 
+                                               RST           1           1      100.00 
+                                               SEL           0           0        0.00 
+
+Total Node Count     =        148 
+Toggled Node Count   =        147 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      99.32% (294 of 296 bins)
+
+=================================================================================
+=== Instance: /\top#dut 
+=== Design Unit: work.dsp
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        18        18         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\top#dut 
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+------------------------------------IF Branch------------------------------------
+    79                                    101000     Count coming in to IF
+    79              1                      50074             if (OPMODE_RESULT[6])
+    81              1                      50926             else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    83                                    101000     Count coming in to IF
+    83              1                      49937             if (OPMODE_RESULT[4])
+    85              1                      51063             else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    101                                   201954     Count coming in to IF
+    101             1                      52561             if (OPMODE_RESULT[3:2] == 0) begin
+    103             1                     149393             end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    104                                   149393     Count coming in to IF
+    104             1                      49722                 if (OPMODE_RESULT[3:2] == 1) begin
+    106             1                      99671                 end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    107                                    99671     Count coming in to IF
+    107             1                      49220                     if (OPMODE_RESULT[3:2] == 2) begin
+    109             1                      50451                     end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    121                                   104110     Count coming in to IF
+    121             1                      26992             if (OPMODE_RESULT[1:0] == 0) begin
+    123             1                      77118             end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    124                                    77118     Count coming in to IF
+    124             1                      26048                 if (OPMODE_RESULT[1:0] == 1) begin
+    127             1                      51070                 end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    128                                    51070     Count coming in to IF
+    128             1                      24896                     if (OPMODE_RESULT[1:0] == 2) begin
+    130             1                      26174                     end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    138                                   164279     Count coming in to IF
+    138             1                      81426             if (OPMODE_RESULT[7] == 1) begin
+    140             1                      82853             end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       6         6         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /\top#dut  --
+
+  File RTL_dsp.sv
+----------------Focused Condition View-------------------
+Line       101 Item    1  (OPMODE_RESULT[3:2] == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (OPMODE_RESULT[3:2] == 0)         Y
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (OPMODE_RESULT[3:2] == 0)_0  -                             
+  Row   2:          1  (OPMODE_RESULT[3:2] == 0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       104 Item    1  (OPMODE_RESULT[3:2] == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (OPMODE_RESULT[3:2] == 1)         Y
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (OPMODE_RESULT[3:2] == 1)_0  -                             
+  Row   2:          1  (OPMODE_RESULT[3:2] == 1)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       107 Item    1  (OPMODE_RESULT[3:2] == 2)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (OPMODE_RESULT[3:2] == 2)         Y
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (OPMODE_RESULT[3:2] == 2)_0  -                             
+  Row   2:          1  (OPMODE_RESULT[3:2] == 2)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       121 Item    1  (OPMODE_RESULT[1:0] == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (OPMODE_RESULT[1:0] == 0)         Y
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (OPMODE_RESULT[1:0] == 0)_0  -                             
+  Row   2:          1  (OPMODE_RESULT[1:0] == 0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       124 Item    1  (OPMODE_RESULT[1:0] == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (OPMODE_RESULT[1:0] == 1)         Y
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (OPMODE_RESULT[1:0] == 1)_0  -                             
+  Row   2:          1  (OPMODE_RESULT[1:0] == 1)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       128 Item    1  (OPMODE_RESULT[1:0] == 2)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (OPMODE_RESULT[1:0] == 2)         Y
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (OPMODE_RESULT[1:0] == 2)_0  -                             
+  Row   2:          1  (OPMODE_RESULT[1:0] == 2)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      22        22         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\top#dut  --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RTL_dsp.sv
+    25                                               module dsp(CARRYINREG,
+    26                                                   CARRYOUTREG,
+    27                                                   , OPMODEREG ,
+    28                                                    A0REG ,
+    29                                                    A1REG ,
+    30                                                    B0REG ,
+    31                                                    B1REG ,
+    32                                                    CREG  ,
+    33                                                   DREG  ,
+    34                                                    MREG  ,PREG  ,
+    35                                                   CEP, RSTP, CARRYOUT, CARRYOUTF, M, P, RSTCARRYIN, BCOUT, CECARRYIN, PCIN, PCOUT,
+    36                                                   CARRYIN, RSTM, CEM, OPMODE, CEOPMODE, RSTOPMODE, A, B, C, D, BCIN,
+    37                                                   CLK, RSTA, RSTB, RSTC, RSTD, CEA, CEB, CEC, CED
+    38                                               );
+    39                                                   input [17:0] A, B, D, BCIN;
+    40                                                   input [47:0] C, PCIN;
+    41                                                   input CEP, RSTP, CECARRYIN, RSTCARRYIN, CARRYIN, RSTM, CEM, CLK, RSTA, RSTB, RSTC, RSTD, CEA, CEB, CEC, CED, CEOPMODE, RSTOPMODE;
+    42                                                   input [7:0] OPMODE;
+    43                                                   output CARRYOUT, CARRYOUTF;
+    44                                                   output [17:0] BCOUT;
+    45                                                   output [47:0] P, PCOUT;
+    46                                                   reg [47:0] Z, X, IN13, IN14;
+    47                                                   reg IN15;
+    48                                                   wire [17:0] IN1, IN2, IN3, IN6, IN7;
+    49                                                   wire [47:0] IN4;
+    50                                                   wire IN9, IN10;
+    51                                                   wire [35:0] IN8;
+    52                                                   output [35:0] M;
+    53                                                   reg [17:0] IN_TRIVIAL, IN5;
+    54                                                   wire [7:0] OPMODE_RESULT;
+    55                                                   wire [17:0] B_CHOOSE;
+    56                                               
+    57                                                   input CARRYOUTREG ;
+    58                                                   input CARRYINREG ;
+    59                                                   input OPMODEREG ;
+    60                                                   input A0REG ;
+    61                                                   input A1REG ;
+    62                                                   input B0REG ;
+    63                                                   input B1REG ;
+    64                                                   input CREG  ;
+    65                                                   input DREG  ;
+    66                                                   input MREG  ;
+    67                                                   input PREG  ;
+    68                                                   parameter B_INPUT = "DIRECT";
+    69                                                   parameter CARRYINSEL = "OPMODE5";
+    70                                               
+    71              1                     101002         assign B_CHOOSE = (B_INPUT == "DIRECT") ? B : (B_INPUT == "CASCADE") ? BCIN : 0;
+    72                                                   section SEC1 (A, A0REG, IN3, CLK, RSTA, CEA);
+    73                                                   section SEC2 (B_CHOOSE, B0REG, IN2, CLK, RSTB, CEB);
+    74                                                   section #(.W(48)) SEC3 (C, CREG, IN4, CLK, RSTC, CEC);
+    75                                                   section SEC4 (D, DREG, IN1, CLK, RSTD, CED);
+    76                                                   section #(.W(8)) OPMODE_SEC (OPMODE, OPMODEREG, OPMODE_RESULT, CLK, RSTOPMODE, CEOPMODE);
+    77                                               
+    78              1                     101000         always @(IN1, IN2, OPMODE_RESULT) begin
+    79                                                       if (OPMODE_RESULT[6])
+    80              1                      50074                 IN_TRIVIAL = IN1 - IN2;
+    81                                                       else
+    82              1                      50926                 IN_TRIVIAL = IN1 + IN2;
+    83                                                       if (OPMODE_RESULT[4])
+    84              1                      49937                 IN5 = IN_TRIVIAL;
+    85                                                       else
+    86              1                      51063                 IN5 = IN2;
+    87                                                   end
+    88                                               
+    89                                                   section SEC5 (IN5, B1REG, IN6, CLK, RSTB, CEB);
+    90                                                   section SEC6 (IN3, A1REG, IN7, CLK, RSTA, CEA);
+    91                                                   assign BCOUT = IN6;
+    92              1                     101980         assign IN8 = IN6 * IN7;
+    93                                               
+    94                                                   section #(.W(36)) SEC7 (IN8, MREG, M, CLK, RSTM, CEM);
+    95                                               
+    96                                                   assign IN9 = (CARRYINSEL == "OPMODE5") ? OPMODE[5] : (CARRYINSEL == "CARRYIN") ? CARRYIN : 0;//bug
+    97                                               
+    98                                                   section #(.W(1)) SEC8 (IN9, CARRYINREG, IN10, CLK, RSTCARRYIN, CECARRYIN);
+    99                                               
+    100             1                     201954         always @(*) begin
+    101                                                      if (OPMODE_RESULT[3:2] == 0) begin
+    102             1                      52561                 Z = 0;
+    103                                                      end else begin
+    104                                                          if (OPMODE_RESULT[3:2] == 1) begin
+    105             1                      49722                     Z = PCIN;
+    106                                                          end else begin
+    107                                                              if (OPMODE_RESULT[3:2] == 2) begin
+    108             1                      49220                         Z = P;
+    109                                                              end else begin
+    110             1                      50451                         Z = IN4;
+    111                                                              end
+    112                                                          end
+    113                                                      end
+    114                                                  end
+    115                                              
+    116             1                     102002         always @(IN1, IN7, IN6) begin
+    117             1                     102002             IN13 = {IN1[11:0], IN7[17:0], IN6[17:0]};
+    118                                                  end
+    119                                              
+    120             1                     104110         always @(*) begin
+    121                                                      if (OPMODE_RESULT[1:0] == 0) begin
+    122             1                      26992                 X = 0;
+    123                                                      end else begin
+    124                                                          if (OPMODE_RESULT[1:0] == 1) begin
+    125             1                      26048                   X = {{12{M[35]}}, M};
+    126                                              
+    127                                                          end else begin
+    128                                                              if (OPMODE_RESULT[1:0] == 2) begin
+    129             1                      24896                         X = P;
+    130                                                              end else begin
+    131             1                      26174                         X = IN13;
+    132                                                              end
+    133                                                          end
+    134                                                      end
+    135                                                  end
+    136                                              
+    137             1                     164279         always @(*) begin
+    138                                                      if (OPMODE_RESULT[7] == 1) begin
+    139             1                      81426                 {IN15, IN14} = Z - (X + IN10);
+    140                                                      end else begin
+    141             1                      82853                 {IN15, IN14} = Z + (X + IN10);
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                       1576      1564        12    99.23%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\top#dut  --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                             A0REG           1           0       50.00 
+                                             A1REG           1           0       50.00 
+                                           A[0-17]           1           1      100.00 
+                                             B0REG           1           0       50.00 
+                                             B1REG           1           0       50.00 
+                                        BCIN[0-17]           1           1      100.00 
+                                       BCOUT[0-17]           1           1      100.00 
+                                           B[0-17]           1           1      100.00 
+                                    B_CHOOSE[0-17]           1           1      100.00 
+                                           CARRYIN           1           1      100.00 
+                                        CARRYINREG           1           0       50.00 
+                                          CARRYOUT           1           1      100.00 
+                                         CARRYOUTF           1           1      100.00 
+                                       CARRYOUTREG           1           0       50.00 
+                                               CEA           1           1      100.00 
+                                               CEB           1           1      100.00 
+                                               CEC           1           1      100.00 
+                                         CECARRYIN           1           1      100.00 
+                                               CED           1           1      100.00 
+                                               CEM           1           1      100.00 
+                                          CEOPMODE           1           1      100.00 
+                                               CEP           1           1      100.00 
+                                               CLK           1           1      100.00 
+                                              CREG           1           0       50.00 
+                                           C[0-47]           1           1      100.00 
+                                              DREG           1           0       50.00 
+                                           D[0-17]           1           1      100.00 
+                                         IN1[0-17]           1           1      100.00 
+                                         IN2[0-17]           1           1      100.00 
+                                         IN3[0-17]           1           1      100.00 
+                                         IN4[0-47]           1           1      100.00 
+                                         IN5[17-0]           1           1      100.00 
+                                         IN6[0-17]           1           1      100.00 
+                                         IN7[0-17]           1           1      100.00 
+                                         IN8[0-35]           1           1      100.00 
+                                               IN9           1           1      100.00 
+                                              IN10           1           1      100.00 
+                                        IN13[47-0]           1           1      100.00 
+                                        IN14[47-0]           1           1      100.00 
+                                              IN15           1           1      100.00 
+                                  IN_TRIVIAL[17-0]           1           1      100.00 
+                                              MREG           1           0       50.00 
+                                           M[0-35]           1           1      100.00 
+                                         OPMODEREG           1           0       50.00 
+                                       OPMODE[0-7]           1           1      100.00 
+                                OPMODE_RESULT[0-7]           1           1      100.00 
+                                        PCIN[0-47]           1           1      100.00 
+                                       PCOUT[0-47]           1           1      100.00 
+                                              PREG           0           0        0.00 
+                                           P[0-47]           1           1      100.00 
+                                              RSTA           1           1      100.00 
+                                              RSTB           1           1      100.00 
+                                              RSTC           1           1      100.00 
+                                        RSTCARRYIN           1           1      100.00 
+                                              RSTD           1           1      100.00 
+                                              RSTM           1           1      100.00 
+                                         RSTOPMODE           1           1      100.00 
+                                              RSTP           1           1      100.00 
+                                           X[47-0]           1           1      100.00 
+                                           Z[47-0]           1           1      100.00 
+
+Total Node Count     =        788 
+Toggled Node Count   =        777 
+Untoggled Node Count =         11 
+
+Toggle Coverage      =      99.23% (1564 of 1576 bins)
+
+
+Total Coverage By Instance (filtered view): 99.61%
+
